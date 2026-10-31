@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-labelledby="preview-title preview-description">
+  <title id="preview-title">RAPIDASH — System Monitoring &amp; Memory Management</title>
+  <desc id="preview-description">An original orange and amber flame with a diagonal negative-space needle inside an open performance dial, on a charcoal background. Rust-Powered • Linux-First • Open Source. The emblem is an abstract identity, not measured telemetry.</desc>
+
+  <defs>
+    <radialGradient id="ember-light" cx="76%" cy="47%" r="48%" gradientTransform="translate(0 .08) scale(1 .83)">
+      <stop offset="0" stop-color="#FF6B35" stop-opacity=".075"/>
+      <stop offset=".58" stop-color="#E63946" stop-opacity=".025"/>
+      <stop offset="1" stop-color="#111318" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="flame-material" x1="890" y1="436" x2="1046" y2="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#E63946"/>
+      <stop offset=".42" stop-color="#FF6B35"/>
+      <stop offset="1" stop-color="#FFB703"/>
+    </linearGradient>
+    <linearGradient id="dial-material" x1="815" y1="435" x2="1115" y2="181" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#E63946"/>
+      <stop offset=".52" stop-color="#FF6B35"/>
+      <stop offset="1" stop-color="#FFB703"/>
+    </linearGradient>
+    <mask id="needle-cut" maskUnits="userSpaceOnUse" x="844" y="156" width="252" height="310">
+      <rect x="844" y="156" width="252" height="310" fill="white"/>
+      <!-- A tapering needle removed from the flame; its tip follows the flame's forward lean. -->
+      <path d="M937.73 374.40 L1056 259 L966.99 398.25 A19 19 0 1 1 937.73 374.40 Z" fill="black"/>
+    </mask>
+  </defs>
+
+  <g id="background">
+    <rect width="1280" height="640" fill="#111318"/>
+    <rect width="1280" height="640" fill="url(#ember-light)"/>
+  </g>
+
+  <g id="wordmark" transform="translate(0 20)" fill="#F8FAFC" font-family="Noto Sans Display, Noto Sans, sans-serif">
+    <text x="80" y="278" font-size="102" font-weight="800" letter-spacing="1">RAPIDASH</text>
+  </g>
+
+  <g id="primary-tagline" transform="translate(0 20)" fill="#F8FAFC" font-family="Noto Sans Display, Noto Sans, sans-serif" font-size="36" font-weight="400">
+    <text x="84" y="344">System Monitoring &amp;</text>
+    <text x="84" y="390">Memory Management</text>
+  </g>
+
+  <g id="secondary-tagline" transform="translate(0 20)" font-family="Noto Sans, sans-serif" font-size="28" font-weight="500" fill="#CCD1DA">
+    <text x="84" y="473">Rust-Powered <tspan fill="#FF6B35">•</tspan> Linux-First <tspan fill="#FF6B35">•</tspan> Open Source</text>
+  </g>
+
+  <g id="ignition-dial" transform="translate(0 20)" aria-label="Original flame and speed-gauge emblem">
+    <!-- An open, unnumbered gauge. No angle or arc length represents a system reading. -->
+    <path id="outer-dial" d="M807.6 446.6 A212 212 0 1 1 1132.4 446.6" fill="none" stroke="#292D35" stroke-width="2"/>
+    <path id="warm-dial" d="M827.5 430 A186 186 0 1 1 1112.5 430" fill="none" stroke="url(#dial-material)" stroke-width="10" stroke-linecap="butt"/>
+
+    <g id="dial-ticks" stroke="#747780" stroke-width="2" stroke-linecap="butt">
+      <path d="M803.9 354.5 L816.5 351.1"/>
+      <path d="M798 310 L811 310"/>
+      <path d="M803.9 265.5 L816.5 268.9"/>
+      <path d="M821 224 L832.3 230.5"/>
+      <path d="M848.4 188.4 L857.6 197.6"/>
+      <path d="M884 161 L890.5 172.3"/>
+      <path d="M925.5 143.9 L928.9 156.5"/>
+      <path d="M970 138 L970 151"/>
+      <path d="M1014.5 143.9 L1011.1 156.5"/>
+      <path d="M1056 161 L1049.5 172.3"/>
+      <path d="M1091.6 188.4 L1082.4 197.6"/>
+      <path d="M1119 224 L1107.7 230.5"/>
+      <path d="M1136.1 265.5 L1123.5 268.9"/>
+      <path d="M1142 310 L1129 310"/>
+      <path d="M1136.1 354.5 L1123.5 351.1"/>
+    </g>
+
+    <!-- Original asymmetric flame silhouette. The upward-right apex supplies the speed direction. -->
+    <path id="flame" d="M1003 177
+      C1009 227 964 251 975 295
+      C995 280 1006 259 1008 236
+      C1060 278 1090 324 1073 375
+      C1058 423 1017 451 970 451
+      C912 451 870 418 869 371
+      C867 332 892 305 922 280
+      C916 309 923 330 938 343
+      C932 288 971 254 1003 177 Z"
+      fill="url(#flame-material)" mask="url(#needle-cut)"/>
+
+    <!-- An amber core keeps the flame recognizable without adding a second symbol. -->
+    <path id="flame-core" d="M977 409 C993 395 1004 378 1005 358 C1023 378 1028 398 1013 416 C1002 429 983 433 970 427 Z" fill="#FFB703"/>
+  </g>
+</svg>
