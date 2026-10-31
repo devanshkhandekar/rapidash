@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Rapidash
+Comment=Blazing Ubuntu Memory, App Group & Chrome Controller
+Exec=rapidash
+Icon=rapidash
+Terminal=false
+Type=Application
+Categories=System;Monitor;Utility;
+StartupNotify=true

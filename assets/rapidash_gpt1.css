@@ -1,0 +1,268 @@
+/* RAPIDASH — Solar Cream / Midnight Ember
+ * GTK4 CSS, no CSS custom properties (works on pre-4.16 GTK4).
+ * Theme class is attached to the adw::ApplicationWindow.
+ * Warm fire accents are restrained in the quiet state, expressive on user actions.
+ */
+
+/* Layout and Typography */
+window.rapidash-light, window.rapidash-dark { font-family: "Cantarell", "Inter", sans-serif; }
+window.rapidash-light { background: #fff5e9; color: #361809; }
+window.rapidash-dark  { background: #141015; color: #f9eee6; }
+.rapidash-light .background { background: #fff5e9; color: #361809; }
+.rapidash-dark .background  { background: #141015; color: #f9eee6; }
+
+/* Flame crown — header stays ember-red in light mode, dark plum in night mode */
+.rapidash-light headerbar {
+    min-height: 58px; padding: 5px 12px;
+    background: linear-gradient(180deg, #ad1d15, #781018);
+    color: #fff8eb; border-bottom: 2px solid #ec8337;
+    box-shadow: 0 3px 12px rgba(87,17,5,0.25);
+}
+.rapidash-dark headerbar {
+    min-height: 58px; padding: 5px 12px;
+    background: linear-gradient(180deg, #32141c, #21131d);
+    color: #fff2d6; border-bottom: 2px solid #b95d35;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.40);
+}
+.brand-box { padding: 2px 4px; }
+.brand-logo-frame {
+    border-radius: 13px; padding: 4px;
+    background: linear-gradient(160deg, #ffe19a, #f88a37);
+    border: 1px solid #ffe9ac;
+    box-shadow: 0 0 14px alpha(#ffb332, 0.26);
+}
+.brand-logo { border-radius: 9px; }
+.brand-title { color: #fff6e7; font-size: 19px; font-weight: 900; letter-spacing: 0.3px; }
+.brand-subtitle { color: #ffe0a4; font-size: 10px; font-weight: 700; letter-spacing: 0.55px; }
+
+/* AdwViewSwitcher actual CSS nodes: viewswitcher button + image / label */
+headerbar viewswitcher button {
+    background: transparent; background-image: none; border: 1px solid transparent;
+    border-radius: 9px; margin: 3px 3px; padding: 7px 12px;
+    color: #ffe5c5; font-size: 12px; font-weight: 750;
+    transition: background-color 170ms ease, border-color 170ms ease;
+}
+headerbar viewswitcher button image { color: #ffd989; -gtk-icon-style: symbolic; }
+headerbar viewswitcher button:checked {
+    color: #ffffff; background: #d33220; background-image: none;
+    border: 1px solid #ed6e30; box-shadow: inset 0 -3px 0 #ffcb53;
+}
+headerbar viewswitcher button:checked image { color: #fff3c8; }
+headerbar viewswitcher button:hover:not(:checked) {
+    background: alpha(#ffe2af, 0.14); background-image: none;
+    border-color: alpha(#ffe0a0, 0.19);
+}
+.rapidash-dark headerbar viewswitcher button:checked {
+    background: #71332d; background-image: none; border-color: #aa6345;
+}
+
+/* Window controls */
+headerbar windowcontrols > button {
+    background: transparent; background-image: none;
+    color: #ffe2a0; border: 1px solid alpha(#f9ba69, 0.20);
+    border-radius: 8px; padding: 3px; min-width: 24px; min-height: 24px;
+}
+headerbar windowcontrols > button:hover { background: alpha(#ffcf72, 0.22); color: white; }
+
+/* Header theme toggle */
+headerbar button.theme-toggle {
+    background: alpha(#fff2d9, 0.10); background-image: none;
+    color: #fff3d5; border: 1px solid alpha(#ffe9c1, 0.35);
+    border-radius: 16px; min-height: 32px; padding: 3px 11px;
+    font-weight: 800; box-shadow: none;
+}
+headerbar button.theme-toggle:hover { background: alpha(#ffe0a0, 0.23); }
+headerbar button.theme-toggle:checked { background: alpha(#ffb55a, 0.22); color: #ffe8b8; }
+headerbar button.theme-toggle image { color: #ffdc83; }
+
+/* Hero cards */
+.hero-card {
+    border-radius: 15px; padding: 16px 17px;
+    transition: box-shadow 220ms ease, border-color 220ms ease;
+}
+.rapidash-light .hero-card {
+    background: #fffdfa; border: 1px solid #ecc8a2;
+    box-shadow: 0 4px 13px alpha(#8b4d1d, 0.075);
+}
+.rapidash-dark .hero-card {
+    background: #241c23; border: 1px solid #483039;
+    box-shadow: 0 4px 15px alpha(#070507, 0.26);
+}
+.rapidash-light .hero-title { color: #a63b24; }
+.rapidash-dark .hero-title  { color: #eab078; }
+.hero-title { font-size: 11px; font-weight: 850; letter-spacing: 0.65px; }
+.hero-value { font-size: 23px; font-weight: 900; font-variant-numeric: tabular-nums; }
+.rapidash-light .hero-value { color: #3c160b; }
+.rapidash-dark .hero-value  { color: #fff0de; }
+.hero-sub { font-size: 12px; font-variant-numeric: tabular-nums; }
+.rapidash-light .hero-sub { color: #875c43; }
+.rapidash-dark .hero-sub  { color: #c3a598; }
+
+/* Memory meters */
+progressbar trough { min-height: 8px; border-radius: 8px; }
+.rapidash-light progressbar trough { background: #f2dfc8; }
+.rapidash-dark progressbar trough  { background: #423039; }
+progressbar progress {
+    min-height: 8px; border-radius: 8px;
+    background: linear-gradient(90deg, #d73325, #f47d31 55%, #ffc24a);
+    transition: all 500ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Search + filter pills */
+.filter-bar { border-radius: 13px; padding: 9px 12px; margin: 4px 16px 10px 16px; }
+.rapidash-light .filter-bar { background: #fff9f2; border: 1px solid #edcaa4; }
+.rapidash-dark .filter-bar  { background: #211a22; border: 1px solid #4c3440; }
+searchentry { border-radius: 9px; padding: 6px 11px; }
+.rapidash-light searchentry { background: #ffffff; color: #361809; border: 1px solid #e4b78a; }
+.rapidash-dark searchentry  { background: #17141c; color: #f3e3d3; border: 1px solid #65454c; }
+searchentry:focus-within { border-color: #f4873e; box-shadow: 0 0 0 2px alpha(#f4873e, 0.20); }
+.rapidash-light searchentry image { color: #a86842; }
+.rapidash-dark searchentry image { color: #f1c18b; }
+
+/* Buttons (GTK4 supports transitions; do not leave infinite idle animation) */
+button { font-weight: 750; border-radius: 8px; padding: 6px 12px; min-height: 30px; box-shadow: none; }
+.rapidash-light button {
+    background: #fff0da; background-image: none;
+    color: #5a2713; border: 1px solid #e1b587;
+}
+.rapidash-dark button {
+    background: #362731; background-image: none;
+    color: #f5e7d9; border: 1px solid #65444a;
+}
+.rapidash-light button:hover { background: #ffe3bf; background-image: none; border-color: #ee9958; }
+.rapidash-dark button:hover  { background: #4e3138; background-image: none; border-color: #b86b50; }
+button:active { transform: scale(0.98); }
+button:disabled { opacity: 0.53; }
+button.suggested-action, .filter-bar button.suggested-action {
+    background: linear-gradient(180deg, #fda844, #e9682c);
+    color: #34120a; border: 1px solid #d36528;
+    box-shadow: 0 2px 6px alpha(#c95315, 0.16);
+}
+button.suggested-action:hover { background: linear-gradient(180deg, #ffc264, #f47d33); }
+button.destructive-action { background: #b82b26; color: #fff8f2; border: 1px solid #8d211d; }
+button.destructive-action:hover { background: #d43b2f; color: #ffffff; }
+headerbar button.suggested-action {
+    background: linear-gradient(180deg, #ffc354, #f18a30);
+    color: #331409; border: 1px solid #ffe29a; min-width: 165px;
+}
+
+/* App groups + Process rows */
+list.boxed-list, preferencesgroup listbox { border-radius: 13px; }
+.rapidash-light list.boxed-list, .rapidash-light preferencesgroup listbox { background: #fffbf5; border: 1px solid #ebc49d; }
+.rapidash-dark list.boxed-list, .rapidash-dark preferencesgroup listbox { background: #211a22; border: 1px solid #49333d; }
+row.activatable, list.boxed-list > row, .proc-card-row {
+    padding: 10px 13px; transition: background-color 220ms ease, box-shadow 220ms ease;
+}
+.rapidash-light row.activatable, .rapidash-light list.boxed-list > row, .rapidash-light .proc-card-row {
+    color: #33160b; background: #fffcf7; border-bottom: 1px solid #f0dac2;
+}
+.rapidash-dark row.activatable, .rapidash-dark list.boxed-list > row, .rapidash-dark .proc-card-row {
+    color: #f7e5d6; background: #251e26; border-bottom: 1px solid #3e2c35;
+}
+.rapidash-light row.activatable:hover, .rapidash-light .proc-card-row:hover { background: #fff1dd; }
+.rapidash-dark row.activatable:hover, .rapidash-dark .proc-card-row:hover { background: #352632; }
+.proc-title { font-size: 14px; font-weight: 850; }
+.rapidash-light .proc-title { color: #41190e; }
+.rapidash-dark .proc-title  { color: #f9e9d9; }
+.proc-subtitle { font-size: 12px; font-variant-numeric: tabular-nums; }
+.rapidash-light .proc-subtitle { color: #855f4a; }
+.rapidash-dark .proc-subtitle { color: #caa996; }
+.rapidash-light .row-frozen-state { background: #fff0d9; box-shadow: inset 4px 0 0 #d77524; }
+.rapidash-dark .row-frozen-state { background: #352b31; box-shadow: inset 4px 0 0 #df9b53; }
+
+/* Readable, fixed-width status badges */
+.app-pill, .frozen-pill, .mem-badge-low, .mem-badge-med, .mem-badge-high,
+.mem-badge-crit, .cpu-pill {
+    font-weight: 800; font-size: 11px; border-radius: 7px;
+    padding: 4px 8px; font-variant-numeric: tabular-nums;
+}
+.app-pill { min-width: 100px; }
+.rapidash-light .app-pill { background: #ffedc5; color: #895021; border: 1px solid #e4c089; }
+.rapidash-dark .app-pill  { background: #594130; color: #ffe2a5; border: 1px solid #89623a; }
+.frozen-pill { min-width: 112px; }
+.rapidash-light .frozen-pill { background: #ffede0; color: #bb3a2c; border: 1px solid #d7664e; }
+.rapidash-dark .frozen-pill { background: #502b34; color: #ffb8a1; border: 1px solid #b45d53; }
+.mem-badge-low, .mem-badge-med, .mem-badge-high, .mem-badge-crit { min-width: 128px; }
+.rapidash-light .mem-badge-low { background: #f8eac6; color: #72521d; border: 1px solid #ddc37f; }
+.rapidash-dark .mem-badge-low { background: #423a2d; color: #f7db9b; border: 1px solid #716345; }
+.mem-badge-med { background: #ed982f; color: #35160d; border: 1px solid #cf781e; }
+.mem-badge-high { background: #d85b2b; color: white; border: 1px solid #ad4027; }
+.mem-badge-crit { background: #b52b2a; color: white; border: 1px solid #8b2023; }
+.cpu-pill { min-width: 70px; }
+.rapidash-light .cpu-pill { background: #fff1e1; color: #a54720; border: 1px solid #e6c39f; }
+.rapidash-dark .cpu-pill { background: #49333b; color: #ffa975; border: 1px solid #6b4a4d; }
+
+/* Overlay banners: GTK Image symbolic icon + GTK Label, not emoji text. */
+.rapidash-toast {
+    min-width: 380px; padding: 13px 18px; border-radius: 16px;
+    background: linear-gradient(145deg, #321923, #5d2826);
+    color: #fff6e6; border: 1px solid #fcb65a;
+    box-shadow: 0 8px 30px alpha(#16060c, 0.38);
+}
+.rapidash-toast-icon-frame {
+    border-radius: 12px; background: alpha(#ffc36a, 0.16);
+    border: 1px solid alpha(#ffcf7d, 0.30); padding: 10px;
+}
+.rapidash-toast-icon { color: #ffda84; -gtk-icon-style: symbolic; }
+.rapidash-toast-label { font-size: 14px; font-weight: 850; color: #fff4dc; }
+.rapidash-toast.fx-ember    { border-color: #ffba66; }
+.rapidash-toast.fx-unicorn  { border-color: #f8ceea; background: linear-gradient(120deg, #4d2343, #6d3a41); }
+.rapidash-toast.fx-unicorn .rapidash-toast-icon { color: #ffd0ee; }
+.rapidash-toast.fx-gallop   { border-color: #ffce61; background: linear-gradient(120deg, #59251c, #a14827); }
+.rapidash-toast.fx-inferno  { border-color: #ff8671; background: linear-gradient(120deg, #5c1922, #a12f20); }
+.rapidash-toast.fx-supernova { border-color: #fff0a9; background: linear-gradient(120deg, #613216, #a25a23); }
+
+/* Individual one-shot effects. 0% idle CSS animation workload. */
+@keyframes rapidash-ember-stasis {
+    0%   { box-shadow: inset 0 0 0 transparent; }
+    30%  { box-shadow: inset 5px 0 0 #f6aa43, 0 0 14px alpha(#f6aa43, 0.22); }
+    100% { box-shadow: inset 4px 0 0 #e98740; }
+}
+@keyframes rapidash-unicorn-revival {
+    0%   { box-shadow: inset 0 0 0 transparent; }
+    42%  { box-shadow: inset 5px 0 0 #ffe5be, 0 0 18px alpha(#e5a1e0, 0.43); }
+    100% { box-shadow: inset 0 0 0 transparent; }
+}
+@keyframes rapidash-fire-gallop {
+    0%   { box-shadow: inset -5px 0 0 #ffc55e; }
+    40%  { box-shadow: inset 14px 0 0 #ffaf39, 0 0 14px alpha(#ef6e35, 0.35); }
+    100% { box-shadow: inset 0 0 0 transparent; }
+}
+@keyframes rapidash-inferno {
+    0%   { opacity: 1; box-shadow: inset 0 0 0 transparent; }
+    30%  { opacity: 1; box-shadow: inset 9px 0 0 #ed602c, 0 0 18px alpha(#d43d25, 0.40); }
+    80%  { opacity: 0.75; }
+    100% { opacity: 0.25; box-shadow: inset 0 0 0 transparent; }
+}
+@keyframes rapidash-solar-flare {
+    0%   { box-shadow: 0 0 0 transparent; }
+    42%  { box-shadow: 0 0 23px alpha(#ffc25a, 0.88); }
+    100% { box-shadow: 0 0 0 transparent; }
+}
+.anim-ember-pulse  { animation: rapidash-ember-stasis 850ms ease-out 1; }
+.anim-morning-sun  { animation: rapidash-unicorn-revival 900ms ease-out 1; }
+.anim-flame-dash   { animation: rapidash-fire-gallop 900ms ease-out 1; }
+.anim-incinerate   { animation: rapidash-inferno 900ms ease-out 1; }
+.anim-supernova    { animation: rapidash-solar-flare 900ms ease-out 1; }
+
+/* Themed icon motion: one-shot only, not a perpetual CPU/GPU animation. */
+@keyframes rapidash-unicorn-sparkle {
+    0%   { opacity: 0.65; transform: scale(0.78) rotate(-12deg); }
+    32%  { opacity: 1; transform: scale(1.20) rotate(9deg); }
+    67%  { opacity: 1; transform: scale(0.97) rotate(-5deg); }
+    100% { opacity: 1; transform: scale(1) rotate(0deg); }
+}
+@keyframes rapidash-gallop-surge {
+    0%   { transform: translateX(-7px) scale(0.9); }
+    45%  { transform: translateX(5px) scale(1.08); }
+    100% { transform: translateX(0) scale(1); }
+}
+@keyframes rapidash-flame-bloom {
+    0%   { transform: scale(0.85); }
+    45%  { transform: scale(1.16); }
+    100% { transform: scale(1); }
+}
+.rapidash-toast.fx-unicorn .rapidash-toast-icon { animation: rapidash-unicorn-sparkle 940ms ease-out 1; }
+.rapidash-toast.fx-gallop .rapidash-toast-icon  { animation: rapidash-gallop-surge 900ms ease-out 1; }
+.rapidash-toast.fx-inferno .rapidash-toast-icon,
+.rapidash-toast.fx-supernova .rapidash-toast-icon { animation: rapidash-flame-bloom 920ms ease-out 1; }

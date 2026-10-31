@@ -1,0 +1,35 @@
+name: Rust CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-test:
+    name: Compile and test (Linux)
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Install GTK4 / Libadwaita build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential pkg-config libgtk-4-dev libadwaita-1-dev
+
+      - name: Rust version
+        run: rustc --version && cargo --version
+
+      - name: Check
+        run: cargo check --locked
+
+      - name: Test
+        run: cargo test --locked
+
+# Add cargo fmt/clippy as required checks once the current tree is clean.
+# CI verifies compilation/tests, not live GTK, Chrome, or hardware behavior.
