@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "SysGuard Ubuntu Bridge",
+  "version": "1.0.0",
+  "description": "Bridges Chrome Windows, Tabs, and Extensions to the SysGuard Ubuntu GTK4 app.",
+  "permissions": [
+    "tabs",
+    "management",
+    "alarms"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}

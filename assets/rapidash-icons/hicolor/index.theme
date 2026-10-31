@@ -1,0 +1,11 @@
+[Icon Theme]
+Name=Rapidash Hicolor
+Comment=Rapidash bundled symbolic icons
+Directories=scalable/actions
+
+[scalable/actions]
+Size=16
+Type=Scalable
+MinSize=8
+MaxSize=128
+Context=Actions
