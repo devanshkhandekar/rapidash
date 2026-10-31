@@ -80,7 +80,7 @@ Install Rust if necessary using the official instructions at [rustup.rs](https:/
 
 ```bash
 # Replace YOUR_GITHUB_USERNAME with the actual repository owner.
-git clone https://github.com/YOUR_GITHUB_USERNAME/rapidash.git
+git clone https://github.com/devanshkhandekar/rapidash.git
 cd rapidash
 
 cargo check
