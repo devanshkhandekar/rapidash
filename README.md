@@ -79,7 +79,6 @@ Install Rust if necessary using the official instructions at [rustup.rs](https:/
 ## Build and run
 
 ```bash
-# Replace YOUR_GITHUB_USERNAME with the actual repository owner.
 git clone https://github.com/devanshkhandekar/rapidash.git
 cd rapidash
 
